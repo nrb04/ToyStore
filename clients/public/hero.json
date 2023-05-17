@@ -1,0 +1,123 @@
+[
+  {
+    "picture_url": "/img/heros/avengers/captin.jpg",
+    "name": "Captin america",
+    "seller_name": "Toy Universe",
+    "seller_email": "toyuniverse@example.com",
+    "sub_category": "Avengers",
+    "price": 39.99,
+    "rating": 4.5,
+    "available_quantity": 10,
+    "description": "The Avengers Action Figure Set brings together your favorite Marvel superheroes in one exciting collection. This set includes action figures of Iron Man, Captain America, Thor, Hulk, Black Widow, and Hawkeye. Each figure features detailed craftsmanship and articulation for dynamic posing. Whether you're reenacting epic battles or displaying them on your shelf, these action figures will ignite your imagination and transport you to the world of superheroes!"
+  },
+  {
+    "picture_url": "/img/heros/avengers/ironman.jpg",
+    "name": "Iron man",
+    "seller_name": "Toy Universe",
+    "seller_email": "toyuniverse@example.com",
+    "sub_category": "Avengers",
+    "price": 39.99,
+    "rating": 4.5,
+    "available_quantity": 10,
+    "description": "The Avengers Action Figure Set brings together your favorite Marvel superheroes in one exciting collection. This set includes action figures of Iron Man, Captain America, Thor, Hulk, Black Widow, and Hawkeye. Each figure features detailed craftsmanship and articulation for dynamic posing. Whether you're reenacting epic battles or displaying them on your shelf, these action figures will ignite your imagination and transport you to the world of superheroes!"
+  },
+  {
+    "picture_url": "/img/heros/avengers/blkpanther.jpg",
+    "name": "Black Panther ",
+    "seller_name": "Superhero Toys Emporium",
+    "seller_email": "superherotoys@example.com",
+    "sub_category": "Avengers",
+    "price": 34.99,
+    "rating": 4.7,
+    "available_quantity": 7,
+    "description": "Recreate the epic battles from Avengers: Infinity War with this action figure set. The set includes action figures of Iron Man, Captain America, Thor, Hulk, Black Widow, and Thanos. Each figure is intricately designed with movie-accurate costumes and details. With multiple points of articulation, you can pose these figures in dynamic action poses. Immerse yourself in the Marvel universe and relive the thrilling moments of Infinity War with this must-have action figure set!"
+  },
+  {
+    "picture_url": "https://example.com/justice-league-action-figures.jpg",
+    "name": "Justice League Action Figure Set",
+    "seller_name": "Hero Headquarters",
+    "seller_email": "heroheadquarters@example.com",
+    "sub_category": "Justice League",
+    "price": 39.99,
+    "rating": 4.6,
+    "available_quantity": 8,
+    "description": "Unite the most powerful superheroes with this Justice League action figure set. The set includes figures of Batman, Superman, Wonder Woman, The Flash, Aquaman, and Cyborg. Each figure is finely detailed with authentic costumes and accessories. With multiple points of articulation, you can pose them in epic battle stances. Whether you're a fan or a collector, this action figure set allows you to bring the Justice League to life and defend the world against any threat!"
+  },
+  {
+    "picture_url": "https://example.com/justice-league-action-figures.jpg",
+    "name": "Justice League Superhero Action Figure Set",
+    "seller_name": "Heroes R Us",
+    "seller_email": "heroesrus@example.com",
+    "sub_category": "Justice League",
+    "price": 29.99,
+    "rating": 4.6,
+    "available_quantity": 8,
+    "description": "Unleash the power of the Justice League with this action figure set. The set includes action figures of Batman, Superman, Wonder Woman, The Flash, Aquaman, and Green Lantern. Each figure features intricate details and articulation for poseable play. Join the iconic DC superheroes as they defend justice and protect the world from evil. With this action figure set, you can create your own epic battles and embark on thrilling adventures with the Justice League!"
+  },
+  {
+    "picture_url": "https://example.com/justice-league-action-figures.jpg",
+    "name": "Justice League Movie Action Figure Set",
+    "seller_name": "Superhero Collectibles",
+    "seller_email": "superherocollectibles@example.com",
+    "sub_category": "Justice League",
+    "price": 39.99,
+    "rating": 4.8,
+    "available_quantity": 6,
+    "description": "Bring the excitement of the Justice League movie to life with this action figure set. The set includes action figures of Batman, Superman, Wonder Woman, The Flash, Aquaman, and Cyborg. Each figure is highly detailed and comes with movie-inspired costumes and accessories. With multiple points of articulation, you can pose these figures in epic battle stances. Join forces with the world's greatest heroes and defend the Earth from formidable threats with the Justice League Movie Action Figure Set!"
+  },
+  {
+    "picture_url": "https://example.com/justice-league-action-figures.jpg",
+    "name": "Justice League Movie Action Figure Set",
+    "seller_name": "Superhero Collectibles",
+    "seller_email": "superherocollectibles@example.com",
+    "sub_category": "Justice League",
+    "price": 39.99,
+    "rating": 4.8,
+    "available_quantity": 6,
+    "description": "Bring the action-packed world of the Justice League movie into your hands with this action figure set. The set includes action figures of Batman, Superman, Wonder Woman, The Flash, Aquaman, and Cyborg. Each figure is highly detailed and features articulation for various poses. Relive the thrilling moments from the movie or create your own superhero adventures. With this Justice League action figure set, you can assemble the legendary team and save the world!"
+  },
+  {
+    "picture_url": "https://example.com/superhero-action-figure.jpg",
+    "name": "Spider-Man Homecoming Action Figure",
+    "seller_name": "Web Warriors Toys",
+    "seller_email": "webwarriors@example.com",
+    "sub_category": "Other",
+    "price": 24.99,
+    "rating": 4.7,
+    "available_quantity": 10,
+    "description": "Swing into action with the Spider-Man Homecoming Action Figure! This highly detailed figure captures the iconic look of Spider-Man from the Homecoming movie. It features multiple points of articulation, allowing for dynamic poses and web-slinging action. With his enhanced senses, agility, and web-shooting abilities, Spider-Man is ready to take on any villain that threatens the city. Add this Spider-Man action figure to your collection and join the friendly neighborhood hero on his thrilling adventures!"
+  },
+  {
+    "picture_url": "https://example.com/superhero-action-figure.jpg",
+    "name": "Spider-Man Action Figure",
+    "seller_name": "Web-Slinging Toys",
+    "seller_email": "webslingingtoys@example.com",
+    "sub_category": "Other Heroes",
+    "price": 19.99,
+    "rating": 4.5,
+    "available_quantity": 10,
+    "description": "Swing into action with this Spider-Man action figure! This highly detailed figure captures the essence of the beloved web-slinger. It features multiple points of articulation, allowing for various dynamic poses. Whether he's climbing walls or shooting webs, this action figure brings Spider-Man's adventures to life. Perfect for fans of all ages, this Spider-Man action figure is a must-have addition to any superhero collection."
+  },
+  {
+    "picture_url": "https://example.com/other-hero-action-figure.jpg",
+    "name": "Wonder Woman Action Figure",
+    "seller_name": "Amazonia Collectibles",
+    "seller_email": "amazoniacollectibles@example.com",
+    "sub_category": "Other Heroes",
+    "price": 24.99,
+    "rating": 4.7,
+    "available_quantity": 8,
+    "description": "Unleash the power of Wonder Woman with this action figure! This figure depicts the iconic Amazonian princess in all her glory. With a detailed sculpt and vibrant colors, it's perfect for display or imaginative play. With multiple points of articulation, you can pose Wonder Woman in dynamic action poses. Join her in defending justice and fighting for peace. This Wonder Woman action figure is a must-have for any superhero fan!"
+  },
+  {
+    "picture_url": "https://example.com/other-hero-action-figure.jpg",
+    "name": "Black Panther Action Figure",
+    "seller_name": "Panther Toys",
+    "seller_email": "panthertoys@example.com",
+    "sub_category": "Other Heroes",
+    "price": 29.99,
+    "rating": 4.8,
+    "available_quantity": 5,
+    "description": "Unleash the power of Wakanda with this Black Panther action figure! This highly detailed figure features the King of Wakanda in his iconic Vibranium suit. With multiple points of articulation, you can pose Black Panther in fierce battle stances. Join him as he fights for justice and protects his homeland. This Black Panther action figure is a must-have for any superhero collector or fan of the Marvel universe!"
+  }
+]
