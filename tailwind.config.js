@@ -1,4 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,12 +6,10 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
 
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("tw-elements/dist/plugin.cjs"), require("daisyui")],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
-      },
+      fontFamily: {},
       colors: {
         red: {
           50: "#ffebee",
@@ -331,5 +328,4 @@ module.exports = {
     opacity: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
   },
-  darkMode: "class",
 };
