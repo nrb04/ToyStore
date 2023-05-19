@@ -1,21 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
 
 const TabData = ({ subCategory, toys }) => {
-  // Filter toys based on the sub-category
+  // style
+
   const filteredToys = toys.filter((toy) => toy.sub_category === subCategory);
 
   return (
-    <div>
+    <div className="flex flex-row">
       {filteredToys.map((toy) => (
         <div key={toy._id}>
-          <img src={toy.picture_url} alt={toy.name} />
-          <h2>{toy.name}</h2>
-          <p>{toy.description}</p>
-          <Link
-            to={`profile/${toy.seller_email}}`}
-            className="px-4 py-2 text-xs font-bold text-white uppercase transition-all duration-150 bg-teal-500 rounded shadow outline-none active:bg-teal-600 hover:shadow-md focus:outline-none ease"
-          ></Link>
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img src={toy.picture_url} alt={toy.name} layout="fill" />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                {toy.name}
+              </Typography>
+              <Typography>{toy.description}</Typography>
+            </CardBody>
+            <CardFooter className="pt-0 ">
+              <Button>
+                <Link to={`profile/${toy.seller_email}}`}></Link>
+                view details
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       ))}
     </div>

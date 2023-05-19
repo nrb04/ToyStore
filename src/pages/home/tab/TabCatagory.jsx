@@ -6,7 +6,6 @@ import { useLoaderData } from "react-router-dom";
 
 const TabCatagory = () => {
   const toys = useLoaderData();
-  console.log(toys);
 
   // Get unique sub-categories from toys
   const subCategories = [...new Set(toys.map((toy) => toy.sub_category))];

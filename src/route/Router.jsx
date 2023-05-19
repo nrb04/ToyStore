@@ -6,6 +6,8 @@ import AllToys from "../pages/alltoys/AllToys";
 import Registration from "../pages/Users/Registration";
 import Login from "../pages/Users/Login";
 import Profile from "../pages/pdata/Profile";
+import ToyForm from "../pages/pdata/ToyForm";
+import DeleteDataForm from "../pages/pdata/DeleteDataForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,9 +32,17 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: "/profile/:seller_email",
-        element: <profile></profile>,
-        loader: () => fetch("http://localhost:5000/data"),
+        path: "/Delete",
+        element: <DeleteDataForm></DeleteDataForm>,
+      },
+      // {
+      //   path: "/profile/:seller_email",
+      //   element: <profile></profile>,
+      //   loader: () => fetch("http://localhost:5000/data"),
+      // },
+      {
+        path: "/toy-data",
+        element: <ToyForm></ToyForm>,
       },
     ],
   },
