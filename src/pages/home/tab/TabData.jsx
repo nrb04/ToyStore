@@ -15,21 +15,21 @@ const TabData = ({ subCategory, toys }) => {
   const filteredToys = toys.filter((toy) => toy.sub_category === subCategory);
 
   return (
-    <div className="flex flex-row">
+    <div className="container flex flex-col justify-center  mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between">
       {filteredToys.map((toy) => (
         <div key={toy._id}>
-          <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
+          <Card className="w-auto">
+            <CardHeader color="blue-gray" className="relative ">
               <img src={toy.picture_url} alt={toy.name} layout="fill" />
             </CardHeader>
             <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                {toy.name}
+              <Typography variant="h5" color="blue-gray" className="mb-0">
+                {toy.name.slice(0, 20)}
               </Typography>
-              <Typography>{toy.description}</Typography>
+              <Typography>{toy.description.slice(0, 70)}</Typography>
             </CardBody>
-            <CardFooter className="pt-0 ">
-              <Button>
+            <CardFooter className="ml-24">
+              <Button className="bg-red-700 ">
                 <Link to={`profile/${toy.seller_email}}`}></Link>
                 view details
               </Button>

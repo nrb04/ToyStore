@@ -12,19 +12,22 @@ const TabCatagory = () => {
 
   return (
     <div>
-      <Tabs>
-        <TabList>
-          {subCategories.map((subCategory) => (
-            <Tab key={subCategory}>{subCategory}</Tab>
-          ))}
-        </TabList>
+      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between ">
+        {" "}
+        <Tabs>
+          <TabList>
+            {subCategories.map((subCategory) => (
+              <Tab key={subCategory}>{subCategory}</Tab>
+            ))}
+          </TabList>
 
-        {subCategories.map((subCategory) => (
-          <TabPanel key={subCategory}>
-            <TabData subCategory={subCategory} toys={toys} />
-          </TabPanel>
-        ))}
-      </Tabs>
+          {subCategories.map((subCategory) => (
+            <TabPanel key={subCategory}>
+              <TabData subCategory={subCategory} toys={toys} />
+            </TabPanel>
+          ))}
+        </Tabs>
+      </div>
     </div>
   );
 };
