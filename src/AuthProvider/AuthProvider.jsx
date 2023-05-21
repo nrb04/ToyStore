@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { createContext, useState } from "react";
 import {
-  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
@@ -30,7 +29,7 @@ const AuthPovider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  const signIn = (email, password) => {
+  const login = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -49,7 +48,7 @@ const AuthPovider = ({ children }) => {
     loading,
     googleLogin,
     createUser,
-    signIn,
+    login,
     logout,
   };
   return (

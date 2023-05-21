@@ -11,7 +11,7 @@ const Home = () => {
       <Banner></Banner>
 
       <TabCatagory></TabCatagory>
-      <Ballery></Ballery>
+      {/* <Ballery></Ballery> */}
       <Xtra2></Xtra2>
       <Xtra1></Xtra1>
     </div>

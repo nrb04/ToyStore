@@ -10,7 +10,7 @@ const Profile = () => {
     fetch(`http://localhost:5000/data/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setToys(data);
       });
   }, []);
 
