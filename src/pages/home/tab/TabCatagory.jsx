@@ -12,21 +12,23 @@ const TabCatagory = () => {
 
   return (
     <div>
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between ">
-        {" "}
-        <Tabs>
-          <TabList>
-            {subCategories.map((subCategory) => (
-              <Tab key={subCategory}>{subCategory}</Tab>
-            ))}
-          </TabList>
+      <div>
+        <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+          {" "}
+          <Tabs>
+            <TabList>
+              {subCategories.map((subCategory) => (
+                <Tab key={subCategory}>{subCategory}</Tab>
+              ))}
+            </TabList>
 
-          {subCategories.map((subCategory) => (
-            <TabPanel key={subCategory}>
-              <TabData subCategory={subCategory} toys={toys} />
-            </TabPanel>
-          ))}
-        </Tabs>
+            {subCategories.map((subCategory) => (
+              <TabPanel key={subCategory}>
+                <TabData subCategory={subCategory} toys={toys} />
+              </TabPanel>
+            ))}
+          </Tabs>
+        </div>
       </div>
     </div>
   );

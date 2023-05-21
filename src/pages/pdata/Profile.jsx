@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import AuthPovider from "../../AuthProvider/AuthProvider";
 
-const Profile = ({ toys, email }) => {
+const Profile = () => {
   // Filter toys based on the email
-  const filteredToys = toys.filter((toy) => toy.seller_email === email);
+  const [toys, setToys] = useState([]);
+  const { user } = useContext(AuthPovider);
 
-  return (
-    <div>
-      {filteredToys.map((toy) => (
-        <div key={toy._id}>
-          <img src={toy.picture_url} alt={toy.name} />
-          <h2>{toy.name}</h2>
-          <p>{toy.description}</p>
-          {/* Render other relevant toy information */}
-        </div>
-      ))}
-    </div>
-  );
+  useEffect(() => {
+    fetch(`http://localhost:5000/data/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
+
+  return;
+  <div></div>;
 };
 
 export default Profile;

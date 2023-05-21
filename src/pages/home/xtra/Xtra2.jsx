@@ -58,11 +58,7 @@ const Xtra2 = () => {
                       </a>
                     </div>
                   </div>
-                  <img
-                    src="https://i.ibb.co/DYxtCJq/img-1.png"
-                    className="w-full"
-                    alt="chair"
-                  />
+                  <img src="/galary/2.jpg" className="w-full" alt="chair" />
                 </div>
                 <div className="sm:w-1/2 sm:mt-0 mt-4 relative">
                   <div>
@@ -103,7 +99,7 @@ const Xtra2 = () => {
                     </div>
                   </div>
                   <img
-                    src="https://i.ibb.co/3C5HvxC/img-2.png"
+                    src="/galary/10.jpg"
                     className="w-full"
                     alt="wall design"
                   />
@@ -148,13 +144,13 @@ const Xtra2 = () => {
                   </div>
                 </div>
                 <img
-                  src="https://i.ibb.co/Ms4qyXp/img-3.png"
+                  src="/galary/9.jpg"
                   alt="sitting place"
                   className="w-full mt-8 md:mt-6 hidden sm:block"
                 />
                 <img
                   className="w-full mt-4 sm:hidden"
-                  src="https://i.ibb.co/6XYbN7f/Rectangle-29.png"
+                  src="/galary/2.jpg"
                   alt="sitting place"
                 />
               </div>
@@ -199,13 +195,13 @@ const Xtra2 = () => {
                   </div>
                 </div>
                 <img
-                  src="https://i.ibb.co/6Wfjf2w/img-4.png"
+                  src="/galary/3.jpg"
                   alt="sitting place"
                   className="w-full sm:block hidden"
                 />
                 <img
                   className="w-full sm:hidden"
-                  src="https://i.ibb.co/dpXStJk/Rectangle-29.png"
+                  src="/galary/5.jpg"
                   alt="sitting place"
                 />
               </div>
@@ -249,7 +245,7 @@ const Xtra2 = () => {
                     </div>
                   </div>
                   <img
-                    src="https://i.ibb.co/3yvZBpm/img-5.png"
+                    src="/img/heros/avengers/blackpanther_toy-7016b8f9-7668-4b1c-9ae6-5fd528543af7.jpg"
                     className="w-full"
                     alt="chair"
                   />
@@ -293,7 +289,7 @@ const Xtra2 = () => {
                     </div>
                   </div>
                   <img
-                    src="https://i.ibb.co/gDdnJb5/img-6.png"
+                    src="/public/img/heros/justic/wonderwoman.jpg"
                     className="w-full"
                     alt="wall design"
                   />

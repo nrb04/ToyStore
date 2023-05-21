@@ -8,10 +8,13 @@ initTE({ Carousel }, true);
 import { RouterProvider } from "react-router-dom";
 import router from "./route/Router.jsx";
 import { AuthenticationProvider } from "react-auth-provider";
+import AuthPovider from "./AuthProvider/AuthProvider";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      <RouterProvider router={router} />
+      <AuthPovider>
+        <RouterProvider router={router} />
+      </AuthPovider>
     </ThemeProvider>
   </React.StrictMode>,
 );

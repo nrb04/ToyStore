@@ -35,11 +35,10 @@ const router = createBrowserRouter([
         path: "/Delete",
         element: <DeleteDataForm></DeleteDataForm>,
       },
-      // {
-      //   path: "/profile/:seller_email",
-      //   element: <profile></profile>,
-      //   loader: () => fetch("http://localhost:5000/data"),
-      // },
+      {
+        path: "/profile",
+        element: <profile></profile>,
+      },
       {
         path: "/toy-data",
         element: <ToyForm></ToyForm>,

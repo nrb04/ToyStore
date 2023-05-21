@@ -4,49 +4,92 @@ const Xtra1 = () => {
   return (
     <div>
       <section>
-        <div className="bg-black text-white py-20 container flex flex-col justify-center  mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between">
-          <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-            <div className="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
-              <h1 className="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">
-                TechFest
-              </h1>
-              <h2 className="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">
-                Space : The Timeless Infinity
-              </h2>
-              <p className="text-sm md:text-base text-gray-50 mb-4">
-                Explore your favourite events and register now to showcase your
-                talent and win exciting prizes.
-              </p>
-              <a
-                href="#"
-                className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
-              >
-                Explore Now
-              </a>
-            </div>
-            <div className="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-              <div className="h-48 flex flex-wrap content-center">
-                <div>
-                  <img
-                    className="inline-block mt-28 xl:block"
-                    src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png"
-                  />
+        <div>
+          <section class="text-gray-700">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="text-center mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+                  Frequently Asked Question
+                </h1>
+                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                  The most common questions about how our business works and
+                  what can do for you.
+                </p>
+              </div>
+              <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+                <div class="w-full lg:w-1/2 px-4 py-2">
+                  <details class="mb-4">
+                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                      How Long is this site live?
+                    </summary>
+
+                    <span>
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
+                  <details class="mb-4">
+                    <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                      Can I install/upload anything I want on there?
+                    </summary>
+
+                    <span>
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
+                  <details class="mb-4">
+                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                      How can I migrate to another site?
+                    </summary>
+
+                    <span>
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
                 </div>
-                <div>
-                  <img
-                    className="inline-block mt-24 md:mt-0 p-8 md:p-0"
-                    src="https://user-images.githubusercontent.com/54521023/116969931-bedb0100-acd4-11eb-99a9-ff5e0ee9f31f.png"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="inline-block mt-28 lg:block"
-                    src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png"
-                  />
+                <div class="w-full lg:w-1/2 px-4 py-2">
+                  <details class="mb-4">
+                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                      Can I change the domain you give me?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
+                  <details class="mb-4">
+                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                      How many sites I can create at once?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
+                  <details class="mb-4">
+                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                      How can I communicate with you?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                      Laboris qui labore cillum culpa in sunt quis sint veniam.
+                      Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                      minim velit nostrud pariatur culpa magna in aute.
+                    </span>
+                  </details>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
     </div>
