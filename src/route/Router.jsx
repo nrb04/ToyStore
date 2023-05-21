@@ -8,6 +8,7 @@ import Login from "../pages/Users/Login";
 import Profile from "../pages/pdata/Profile";
 import ToyForm from "../pages/pdata/ToyForm";
 import DeleteDataForm from "../pages/pdata/DeleteDataForm";
+import Blogs from "../pages/Blogs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
         path: "/registration",
         element: <Registration></Registration>,
       },
@@ -37,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <profile></profile>,
+        element: <Profile></Profile>,
       },
       {
         path: "/toy-data",

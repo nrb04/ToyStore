@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 function ToyForm() {
+  const { user } = useContext(AuthContext);
+
   const [pictureUrl, setPictureUrl] = useState("");
   const [name, setName] = useState("");
   const [sellerName, setSellerName] = useState("");
-  const [sellerEmail, setSellerEmail] = useState("");
+  const [sellerEmail, setSellerEmail] = useState(user?.email || ""); // Use user email if available
   const [subCategory, setSubCategory] = useState("");
   const [rating, setRating] = useState(0);
   const [description, setDescription] = useState("");
@@ -45,130 +48,92 @@ function ToyForm() {
     setPictureUrl("");
     setName("");
     setSellerName("");
-    setSellerEmail("");
+    setSellerEmail(user?.email || ""); // Use user email if available
     setSubCategory("");
     setRating(0);
     setDescription("");
   };
+
   console.log(handleSubmit);
   return (
     <div>
       <section>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Picture URL:
-            <input
-              type="text"
-              value={pictureUrl}
-              onChange={(e) => setPictureUrl(e.target.value)}
-            />
-          </label>
-          <br />
-          <label>
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-          <br />
-          <label>
-            Seller Name:
-            <input
-              type="text"
-              value={sellerName}
-              onChange={(e) => setSellerName(e.target.value)}
-            />
-          </label>
-          <br />
-          <label>
-            Seller Email:
-            <input
-              type="email"
-              value={sellerEmail}
-              onChange={(e) => setSellerEmail(e.target.value)}
-            />
-          </label>
-          <br />
-          <label>
-            Sub-category:
-            <input
-              type="text"
-              value={subCategory}
-              onChange={(e) => setSubCategory(e.target.value)}
-            />
-          </label>
-          <br />
-          <label>
-            Rating:
-            <input
-              type="number"
-              value={rating}
-              onChange={(e) => setRating(parseFloat(e.target.value))}
-            />
-          </label>
-          <br />
-          <label>
-            Description:
-            <textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </label>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section>
         {" "}
         <div>
-          <div className="flex justify-center items-center w-screen h-screen bg-white">
+          <div className="flex justify-center mt-8 items-center w-screen h-screen bg-white">
             <div className="container mx-auto my-4 px-4 lg:px-20">
-              <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
-                <div className="flex">
-                  <h1 className="font-bold uppercase text-5xl">
-                    Send us a <br /> message
-                  </h1>
-                </div>
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
-                  <input
-                    className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                    type="text"
-                    placeholder="First Name*"
-                  />
-                  <input
-                    className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                    type="text"
-                    placeholder="Last Name*"
-                  />
-                  <input
-                    className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                    type="email"
-                    placeholder="Email*"
-                  />
-                  <input
-                    className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                    type="number"
-                    placeholder="Phone*"
-                  />
-                </div>
-                <div className="my-4">
-                  <textarea
-                    placeholder="Message*"
-                    className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                  ></textarea>
-                </div>
-                <div className="my-2 w-1/2 lg:w-1/4">
-                  <button
-                    className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
+              <form onSubmit={handleSubmit}>
+                <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
+                  <div className="flex">
+                    <h1 className="font-bold uppercase text-5xl">
+                      add your toy
+                    </h1>
+                  </div>
+                  <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="text"
+                      placeholder="PIcture Url"
+                      value={pictureUrl}
+                      onChange={(e) => setPictureUrl(e.target.value)}
+                    />
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="text"
+                      placeholder="Toy name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="name"
+                      name="user"
+                      placeholder="seller name*"
+                      value={sellerName}
+                      onChange={(e) => setSellerName(e.target.value)}
+                    />
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="email"
+                      name="user"
+                      placeholder="Email*"
+                      value={sellerEmail}
+                      onChange={(e) => setSellerEmail(e.target.value)}
+                    />
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="number"
+                      placeholder="setect"
+                      value={rating}
+                      onChange={(e) => setRating(parseFloat(e.target.value))}
+                    />
+                    <input
+                      className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      type="text"
+                      placeholder="subcatagory"
+                      value={subCategory}
+                      onChange={(e) => setSubCategory(e.target.value)}
+                    ></input>
+                  </div>
+                  <div className="my-4">
+                    <textarea
+                      placeholder="Message*"
+                      className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <div className="my-2 w-1/2 lg:w-1/4">
+                    <button
+                      type="submit"
+                      className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
                       focus:outline-none focus:shadow-outline"
-                  >
-                    Send Message
-                  </button>
+                    >
+                      Add your toy
+                    </button>
+                  </div>
                 </div>
-              </div>
-
+              </form>
               <div className="w-full lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto bg-blue-900 rounded-2xl">
                 <div className="flex flex-col text-white">
                   <h1 className="font-bold uppercase text-4xl my-4">
@@ -227,7 +192,7 @@ function ToyForm() {
             </div>
           </div>
         </div>
-      </section>
+      </section>{" "}
     </div>
   );
 }
