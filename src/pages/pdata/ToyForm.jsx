@@ -73,7 +73,7 @@ function ToyForm() {
                     <input
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="text"
-                      placeholder="PIcture Url"
+                      placeholder="Picture Url"
                       value={pictureUrl}
                       onChange={(e) => setPictureUrl(e.target.value)}
                     />
@@ -88,14 +88,14 @@ function ToyForm() {
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="name"
                       name="user"
-                      placeholder="seller name*"
+                      placeholder="Seller name*"
                       value={sellerName}
                       onChange={(e) => setSellerName(e.target.value)}
                     />
                     <input
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="email"
-                      name="user"
+                      name="email"
                       placeholder="Email*"
                       value={sellerEmail}
                       onChange={(e) => setSellerEmail(e.target.value)}
@@ -103,21 +103,21 @@ function ToyForm() {
                     <input
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="number"
-                      placeholder="setect"
+                      placeholder="Rating"
                       value={rating}
                       onChange={(e) => setRating(parseFloat(e.target.value))}
                     />
                     <input
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       type="text"
-                      placeholder="subcatagory"
+                      placeholder="Subcategory"
                       value={subCategory}
                       onChange={(e) => setSubCategory(e.target.value)}
                     ></input>
                   </div>
                   <div className="my-4">
                     <textarea
-                      placeholder="Message*"
+                      placeholder="Description*"
                       className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}

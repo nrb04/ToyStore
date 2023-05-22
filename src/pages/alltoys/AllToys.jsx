@@ -4,14 +4,22 @@ import { Card, Typography } from "@material-tailwind/react";
 
 const AllToys = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("name"); // Add state for sorting
   const toys = useLoaderData();
 
   const handleSearch = () => {
     // Perform search logic based on the searchTerm
     // Update the filteredToys array with the filtered results
-    const filteredToys = toys.filter((toy) =>
+    let filteredToys = toys.filter((toy) =>
       toy.name.toLowerCase().includes(searchTerm.toLowerCase()),
     );
+
+    // Sort the filteredToys based on the sortBy value
+    if (sortBy === "name") {
+      filteredToys = filteredToys.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === "price") {
+      filteredToys = filteredToys.sort((a, b) => a.price - b.price);
+    }
 
     // Render the filteredToys
     return (
@@ -21,6 +29,7 @@ const AllToys = () => {
             <tr>
               <th>Name</th>
               <th>Description</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +54,16 @@ const AllToys = () => {
                     {toy.description.slice(0, 20)}
                   </Typography>
                 </td>
+
+                <td className="p-4">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    ${toy.price}
+                  </Typography>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -63,6 +82,18 @@ const AllToys = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
+      </div>
+
+      <div>
+        <label htmlFor="sort">Sort By:</label>
+        <select
+          id="sort"
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+        >
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+        </select>
       </div>
 
       {handleSearch()}

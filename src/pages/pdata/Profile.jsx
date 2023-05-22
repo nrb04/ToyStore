@@ -51,6 +51,21 @@ const Profile = () => {
       });
   };
 
+  const handleDeleteClick = (toyId) => {
+    fetch(`http://localhost:5000/data/${toyId}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // Remove the deleted toy from the toys state
+        const updatedToys = toys.filter((toy) => toy._id !== toyId);
+        setToys(updatedToys);
+      })
+      .catch((error) => {
+        console.error("Error deleting toy:", error);
+      });
+  };
+
   return (
     <div>
       <table>
@@ -105,9 +120,21 @@ const Profile = () => {
               </td>
               <td>
                 {editingToyId === toy._id ? (
-                  <button onClick={handleUpdateClick}>Update</button>
+                  <div>
+                    <button onClick={handleUpdateClick}>Update</button>
+                    <button onClick={() => setEditingToyId(null)}>
+                      Cancel
+                    </button>
+                  </div>
                 ) : (
-                  <button onClick={() => handleEditClick(toy._id)}>Edit</button>
+                  <div>
+                    <button onClick={() => handleEditClick(toy._id)}>
+                      Edit
+                    </button>
+                    <button onClick={() => handleDeleteClick(toy._id)}>
+                      Delete
+                    </button>
+                  </div>
                 )}
               </td>
             </tr>
