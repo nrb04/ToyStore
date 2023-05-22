@@ -27,7 +27,7 @@ function ToyForm() {
     };
 
     // Send toyData to the server
-    fetch("http://localhost:5000/toy-data", {
+    fetch("https://ass113-nhdred1-gmailcom.vercel.app/toy-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -9,6 +9,7 @@ import Profile from "../pages/pdata/Profile";
 import ToyForm from "../pages/pdata/ToyForm";
 import DeleteDataForm from "../pages/pdata/DeleteDataForm";
 import Blogs from "../pages/Blogs";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,12 +18,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/data"),
+        loader: () => fetch("https://ass113-nhdred1-gmailcom.vercel.app/data"),
       },
       {
         path: "/alltoys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/data"),
+        loader: () => fetch("https://ass113-nhdred1-gmailcom.vercel.app/data"),
       },
       {
         path: "/login",
@@ -38,11 +39,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/Delete",
-        element: <DeleteDataForm></DeleteDataForm>,
+        element: (
+          <PrivateRoute>
+            <DeleteDataForm></DeleteDataForm>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/toy-data",

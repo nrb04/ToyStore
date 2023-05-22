@@ -24,57 +24,65 @@ const AllToys = () => {
     // Render the filteredToys
     return (
       <Card className="overflow-scroll h-full w-full">
-        <table className="w-full min-w-max table-auto text-left">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredToys.map((toy) => (
-              <tr key={toy._id} className="even:bg-blue-gray-50/50">
-                <td className="p-4">
+        <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+          <table className="w-full min-w-max table-auto text-left">
+            <thead>
+              <tr>
+                <th className="p-4">
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {toy.name.slice(0, 50)}
+                    <b>Name</b>
                   </Typography>
-                </td>
-
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {toy.description.slice(0, 20)}
-                  </Typography>
-                </td>
-
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    ${toy.price}
-                  </Typography>
-                </td>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredToys.map((toy) => (
+                <tr key={toy._id} className="even:bg-blue-gray-50/50">
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {toy.name.slice(0, 50)}
+                    </Typography>
+                  </td>
+
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {toy.description.slice(0, 20)}
+                    </Typography>
+                  </td>
+
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      ${toy.price}
+                    </Typography>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </Card>
     );
   };
 
   return (
     <div>
-      <div>
+      <div className="2xl:mx-auto 2xl:container  box-content items-center  border-4 lg:px-20 lg:py-0 md:py-12 md:px-6 py-2 px-4 w-96 sm:w-auto">
         <input
           type="text"
           placeholder="Search..."
@@ -84,7 +92,7 @@ const AllToys = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      <div>
+      <div className="2xl:mx-auto 2xl:container box-border  border-4   lg:py-3 md:py-12 md:px-6 py-1 px-4 w-96 sm:w-auto">
         <label htmlFor="sort">Sort By:</label>
         <select
           id="sort"

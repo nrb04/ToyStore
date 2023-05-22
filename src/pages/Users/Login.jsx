@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
 
 const Login = () => {
   const { googleLogin, login } = useContext(AuthContext);
@@ -63,7 +64,7 @@ const Login = () => {
               <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
                 <img
                   src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png"
-                  className="btn-"
+                  className=""
                 />
               </div>
             </div>
@@ -118,7 +119,20 @@ const Login = () => {
                     </div>
                   </div>
                 </form>
-                <button onClick={handleGoogleLogin}>googleLogin</button>
+                <Button
+                  size="lg"
+                  variant="outlined"
+                  color="blue-gray"
+                  className="flex items-center gap-3 mt-4"
+                  onClick={handleGoogleLogin}
+                >
+                  <img
+                    src="/icons/google.png"
+                    alt="metamask"
+                    className="h-6 w-6"
+                  />
+                  Continue with Google
+                </Button>
               </div>
               <svg
                 viewbox="0 0 91 91"

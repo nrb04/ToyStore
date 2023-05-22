@@ -289,7 +289,7 @@ const Xtra2 = () => {
                     </div>
                   </div>
                   <img
-                    src="/public/img/heros/justic/wonderwoman.jpg"
+                    src="/img/heros/justic/wonderwoman.jpg"
                     className="w-full"
                     alt="wall design"
                   />

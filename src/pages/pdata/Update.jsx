@@ -22,7 +22,7 @@ const Update = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

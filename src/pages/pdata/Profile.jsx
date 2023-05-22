@@ -8,7 +8,7 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/data/${user?.email}`)
+    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/data/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -26,7 +26,7 @@ const Profile = () => {
   };
 
   const handleUpdateClick = () => {
-    fetch(`http://localhost:5000/data/${editingToyId}`, {
+    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/data/${editingToyId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const Profile = () => {
   };
 
   const handleDeleteClick = (toyId) => {
-    fetch(`http://localhost:5000/data/${toyId}`, {
+    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/data/${toyId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

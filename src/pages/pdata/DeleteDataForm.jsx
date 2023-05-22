@@ -11,7 +11,9 @@ const DeleteDataForm = () => {
   const fetchData = async () => {
     try {
       // Send GET request to retrieve all email data
-      const response = await axios.get("http://localhost:5000/data");
+      const response = await axios.get(
+        "https://ass113-nhdred1-gmailcom.vercel.app/data",
+      );
 
       if (response.status === 200) {
         // Update the emails state with the retrieved data
@@ -32,7 +34,7 @@ const DeleteDataForm = () => {
     try {
       // Send DELETE request to delete data associated with the selected email ID
       const response = await axios.delete(
-        `http://localhost:5000/data/${selectedEmailId}`,
+        `https://ass113-nhdred1-gmailcom.vercel.app/data/${selectedEmailId}`,
       );
 
       if (response.status === 200) {

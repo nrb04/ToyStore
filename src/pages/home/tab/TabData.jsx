@@ -10,8 +10,11 @@ import {
   CardBody,
   CardFooter,
   Typography,
-  Rating,
 } from "@material-tailwind/react";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
+import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
 
 const TabData = ({ subCategory, toys }) => {
   const filteredToys = toys.filter((toy) => toy.sub_category === subCategory);
@@ -32,43 +35,43 @@ const TabData = ({ subCategory, toys }) => {
               <Typography variant="h5" color="blue-gray" className="mb-0">
                 {toy.name?.slice(0, 20)}
               </Typography>
-              <Typography>{toy.description?.slice(0, 70)}</Typography>
+              <Typography> $ {toy.price}</Typography>
+              <br />
+              <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
             </CardBody>
             <CardFooter className="ml-24">
-              <Popover>
-                <PopoverHandler>
-                  <Button className="bg-red-700">view details</Button>
-                </PopoverHandler>
-                <PopoverContent>
-                  <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                    <div className="p-8 rounded shadow-xl sm:p-16">
-                      <div className="flex flex-col lg:flex-row">
-                        <div className="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
-                          <img src={toy.picture_url} alt="" srcSet="" />
-                          <h2 className="font-sans text-3xl text-center my-5 font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                            {toy.name}
-                          </h2>
-                        </div>
-                        <div className="lg:w-1/2">
-                          <p className="mb-4 text-base text-gray-700">
-                            <b> Seller Name: </b>
-                            {toy.seller_name || ""}
-                            <br />
-                            <b>description:</b>
-                            {toy.description || ""}
-                            <br />
-                          </p>
-                          <Rating
-                            value={parseInt(toy.rating) || 4}
-                            precision={0.5}
-                            readonly
-                          />
+              <PrivateRoute>
+                <Popover>
+                  <PopoverHandler>
+                    <Button className="bg-red-700">View Dtails</Button>
+                  </PopoverHandler>
+
+                  <PopoverContent>
+                    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                      <div className="p-8 rounded shadow-xl sm:p-16">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="mb-6 lg:mb-0 lg:w-1/2 lg:pr-5">
+                            <img src={toy.picture_url} alt="" srcSet="" />
+                            <h2 className="font-sans text-3xl text-center my-5 font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                              {toy.name}
+                            </h2>
+                          </div>
+                          <div className="lg:w-1/2">
+                            <p className="mb-4 text-base text-gray-700">
+                              <b> Seller Name: </b>
+                              {toy.seller_name || ""}
+                              <br />
+                              <b>description:</b>
+                              {toy.description || ""}
+                              <br />
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </PopoverContent>
-              </Popover>
+                  </PopoverContent>
+                </Popover>
+              </PrivateRoute>
             </CardFooter>
           </Card>
         </div>
