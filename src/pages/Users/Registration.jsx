@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import dtitle from "../../dtitle";
 const Registration = () => {
+  dtitle("Registration");
   const { createUser } = useContext(AuthContext);
 
   const handleRegister = (event) => {

@@ -3,8 +3,10 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import Swal from "sweetalert2";
+import dtitle from "../../dtitle";
 
 const Login = () => {
+  dtitle("Login");
   const { googleLogin, login } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
