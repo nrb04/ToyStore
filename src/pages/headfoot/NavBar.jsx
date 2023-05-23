@@ -48,20 +48,25 @@ const NavBar = () => {
               >
                 All Toys
               </Link>
-              <Link
-                to="/profile"
-                className="flex text-gray-600 hover:text-blue-500
+              {user && (
+                <>
+                  {" "}
+                  <Link
+                    to="/profile"
+                    className="flex text-gray-600 hover:text-blue-500
                     cursor-pointer transition-colors duration-300"
-              >
-                My Toys
-              </Link>
-              <Link
-                to="/toy-data"
-                className="flex text-gray-600 hover:text-blue-500
+                  >
+                    My Toys
+                  </Link>
+                  <Link
+                    to="/toy-data"
+                    className="flex text-gray-600 hover:text-blue-500
                     cursor-pointer transition-colors duration-300"
-              >
-                Add A Toy
-              </Link>
+                  >
+                    Add A Toy
+                  </Link>
+                </>
+              )}
               <Link
                 to="/blogs"
                 className="flex text-gray-600 hover:text-blue-500

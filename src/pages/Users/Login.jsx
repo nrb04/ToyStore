@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { googleLogin, login } = useContext(AuthContext);
@@ -33,6 +34,7 @@ const Login = () => {
         const logUser = result.user;
         console.log(logUser);
         navigate(from, { replace: true });
+        Swal.fire("User login sucess");
       })
       .catch((error) => {
         setError("Invalid email or password.");
@@ -46,6 +48,7 @@ const Login = () => {
         console.log(result.user);
         setError("");
         navigate(from, { replace: true });
+        Swal.fire("Google login sucess");
       })
       .catch((error) => {
         setError(error.message);

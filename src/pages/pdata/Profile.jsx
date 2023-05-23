@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthProvider, { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Profile = () => {
   const [toys, setToys] = useState([]);
-  const [editingToyId, setEditingToyId] = useState(null);
-  const [editedToy, setEditedToy] = useState({});
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
@@ -13,46 +12,10 @@ const Profile = () => {
       .then((data) => {
         setToys(data);
       });
-  }, []);
-
-  const handleEditClick = (toyId) => {
-    setEditingToyId(toyId);
-    const selectedToy = toys.find((toy) => toy._id === toyId);
-    setEditedToy(selectedToy);
-  };
-
-  const handleInputChange = (e) => {
-    setEditedToy({ ...editedToy, [e.target.name]: e.target.value });
-  };
-
-  const handleUpdateClick = () => {
-    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/data/${editingToyId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(editedToy),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // Update the toys state with the updated toy data
-        const updatedToys = toys.map((toy) => {
-          if (toy._id === editingToyId) {
-            return { ...toy, ...editedToy };
-          }
-          return toy;
-        });
-        setToys(updatedToys);
-        setEditingToyId(null);
-        setEditedToy({});
-      })
-      .catch((error) => {
-        console.error("Error updating toy:", error);
-      });
-  };
+  }, [user]);
 
   const handleDeleteClick = (toyId) => {
-    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/data/${toyId}`, {
+    fetch(`https://ass113-nhdred1-gmailcom.vercel.app/toy/${toyId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -67,80 +30,40 @@ const Profile = () => {
   };
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Seller Name</th>
-            <th>Seller Email</th>
-            <th>Sub Category</th>
-            <th>Price</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {toys.map((toy) => (
-            <tr key={toy._id}>
-              <td>
-                {editingToyId === toy._id ? (
-                  <input
-                    type="text"
-                    name="seller_name"
-                    value={editedToy.seller_name || ""}
-                    onChange={handleInputChange}
-                  />
-                ) : (
-                  toy.seller_name
-                )}
-              </td>
-              <td>{toy.seller_email}</td>
-              <td>
-                {editingToyId === toy._id ? (
-                  <input
-                    type="text"
-                    name="sub_category"
-                    value={editedToy.sub_category || ""}
-                    onChange={handleInputChange}
-                  />
-                ) : (
-                  toy.sub_category
-                )}
-              </td>
-              <td>
-                {editingToyId === toy._id ? (
-                  <input
-                    type="number"
-                    name="price"
-                    value={editedToy.price || ""}
-                    onChange={handleInputChange}
-                  />
-                ) : (
-                  toy.price
-                )}
-              </td>
-              <td>
-                {editingToyId === toy._id ? (
-                  <div>
-                    <button onClick={handleUpdateClick}>Update</button>
-                    <button onClick={() => setEditingToyId(null)}>
-                      Cancel
-                    </button>
-                  </div>
-                ) : (
-                  <div>
-                    <button onClick={() => handleEditClick(toy._id)}>
-                      Edit
-                    </button>
+    <div className="flex justify-center items-center">
+      <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+        {toys.length === 0 ? (
+          <p>You have no data</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Seller Name</th>
+                <th>Seller Email</th>
+                <th>Sub Category</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {toys.map((toy) => (
+                <tr key={toy._id}>
+                  <td>{toy.seller_name}</td>
+                  <td>{toy.seller_email}</td>
+                  <td>{toy.sub_category}</td>
+                  <td>{toy.price}</td>
+                  <td>
+                    <Link to={`/profile/${toy._id}`}>View Details</Link>
                     <button onClick={() => handleDeleteClick(toy._id)}>
                       Delete
                     </button>
-                  </div>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 function ToyForm() {
   const { user } = useContext(AuthContext);
@@ -38,6 +39,7 @@ function ToyForm() {
       .then((data) => {
         console.log("Data sent to server:", data);
         // Handle server response if needed
+        Swal.fire(" sucess");
       })
       .catch((error) => {
         console.error("Error sending data to server:", error);
@@ -54,7 +56,6 @@ function ToyForm() {
     setDescription("");
   };
 
-  console.log(handleSubmit);
   return (
     <div>
       <section>
@@ -107,13 +108,16 @@ function ToyForm() {
                       value={rating}
                       onChange={(e) => setRating(parseFloat(e.target.value))}
                     />
-                    <input
+                    <select
                       className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                      type="text"
-                      placeholder="Subcategory"
                       value={subCategory}
                       onChange={(e) => setSubCategory(e.target.value)}
-                    ></input>
+                    >
+                      <option value="Avengers">Avengers</option>
+                      <option value="Justice League">Justice League</option>
+                      <option value="Other">Other</option>
+                      {/* Add more options as needed */}
+                    </select>
                   </div>
                   <div className="my-4">
                     <textarea

@@ -23,66 +23,110 @@ const AllToys = () => {
 
     // Render the filteredToys
     return (
-      <Card className="overflow-scroll h-full w-full">
-        <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-          <table className="w-full min-w-max table-auto text-left">
-            <thead>
-              <tr>
-                <th className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    <b>Name</b>
-                  </Typography>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredToys.map((toy) => (
-                <tr key={toy._id} className="even:bg-blue-gray-50/50">
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {toy.name.slice(0, 50)}
-                    </Typography>
-                  </td>
+      <div>
+        <div className="w-11/12 mx-auto">
+          <div className="flex flex-col">
+            <div className="overflow-x-auto shadow-md sm:rounded-lg">
+              <div className="inline-block min-w-full align-middle">
+                <div className="overflow-hidden ">
+                  <table className="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                    <thead className="bg-gray-100 dark:bg-gray-700">
+                      <tr>
+                        <th
+                          scope="col"
+                          className="py-3 px-2 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Image
+                        </th>
+                        <th
+                          scope="col"
+                          className="py-3 px-2 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Name
+                        </th>
+                        <th
+                          scope="col"
+                          className="py-3 px-2 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Seller Name
+                        </th>
+                        <th
+                          scope="col"
+                          className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Catagory
+                        </th>
+                        <th
+                          scope="col"
+                          className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Price
+                        </th>
+                        <th
+                          scope="col"
+                          className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                        >
+                          Quantity
+                        </th>
+                        <th scope="col" className="p-4">
+                          <span className="sr-only">View Details</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                      {filteredToys.map((toy) => (
+                        <tr
+                          key={toy._id}
+                          className="hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          <td className="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                            <img
+                              src={toy?.picture_url}
+                              class="w-32 rounded"
+                              alt="Avatar"
+                            />
+                          </td>
 
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {toy.description.slice(0, 20)}
-                    </Typography>
-                  </td>
+                          <td className="py-4 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                            {toy.name.slice(0, 10)}
+                          </td>
 
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      ${toy.price}
-                    </Typography>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                          <td className="py-4 text-sm font-medium text-black whitespace-nowrap dark:text-white">
+                            {toy.seller_name}
+                          </td>
+                          <td className="py-4 text-sm font-medium text-black whitespace-nowrap dark:text-white">
+                            {toy.sub_category}
+                          </td>
+                          <td className="py-4 text-sm font-medium text-black whitespace-nowrap dark:text-white">
+                            {toy.price}
+                          </td>
+                          <td className="py-4 text-sm font-medium text-black whitespace-nowrap dark:text-white">
+                            {toy.available_quantity}
+                          </td>
+                          <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                            <a
+                              href="#"
+                              className="text-blue-600 dark:text-blue-500 hover:underline"
+                            >
+                              view details
+                            </a>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Card>
+      </div>
     );
   };
 
   return (
     <div>
-      <div className="2xl:mx-auto 2xl:container  box-content items-center  border-4 lg:px-20 lg:py-0 md:py-12 md:px-6 py-2 px-4 w-96 sm:w-auto">
+      <div className="box-content h-7 w-72 p-4 border-4  ml-16">
         <input
           type="text"
           placeholder="Search..."
@@ -92,7 +136,7 @@ const AllToys = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      <div className="2xl:mx-auto 2xl:container box-border  border-4   lg:py-3 md:py-12 md:px-6 py-1 px-4 w-96 sm:w-auto">
+      <div className="box-content my-5 h-5 w-32 p-4 border-4 ml-16">
         <label htmlFor="sort">Sort By:</label>
         <select
           id="sort"

@@ -10,6 +10,7 @@ import ToyForm from "../pages/pdata/ToyForm";
 import DeleteDataForm from "../pages/pdata/DeleteDataForm";
 import Blogs from "../pages/Blogs";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ToyDetails from "../pages/pdata/ToyDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/profile/:id",
+        element: <ToyDetails></ToyDetails>,
+        loader: ({params}) => fetch(`https://ass113-nhdred1-gmailcom.vercel.app/toy/${params.id}`),
       },
       {
         path: "/Delete",

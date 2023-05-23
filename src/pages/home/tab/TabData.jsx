@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   Popover,
@@ -15,10 +15,11 @@ import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const TabData = ({ subCategory, toys }) => {
   const filteredToys = toys.filter((toy) => toy.sub_category === subCategory);
-
+  const { user } = useContext(AuthContext);
   return (
     <div className="container flex flex-col justify-center mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between">
       {filteredToys.map((toy) => (
@@ -40,12 +41,11 @@ const TabData = ({ subCategory, toys }) => {
               <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
             </CardBody>
             <CardFooter className="ml-24">
-              <PrivateRoute>
+              {user ? (
                 <Popover>
                   <PopoverHandler>
                     <Button className="bg-red-700">View Dtails</Button>
                   </PopoverHandler>
-
                   <PopoverContent>
                     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                       <div className="p-8 rounded shadow-xl sm:p-16">
@@ -71,7 +71,11 @@ const TabData = ({ subCategory, toys }) => {
                     </div>
                   </PopoverContent>
                 </Popover>
-              </PrivateRoute>
+              ) : (
+                <Link to="/login">
+                  <Button className="bg-red-700">View Dtails</Button>
+                </Link>
+              )}
             </CardFooter>
           </Card>
         </div>
