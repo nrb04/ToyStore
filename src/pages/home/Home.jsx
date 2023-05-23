@@ -4,8 +4,10 @@ import TabCatagory from "./tab/TabCatagory";
 import Xtra1 from "./xtra/Xtra1";
 import Xtra2 from "./xtra/Xtra2";
 import Ballery from "./xtra/Ballery";
+import dtitle from "../../dtitle";
 
 const Home = () => {
+  dtitle("Home");
   return (
     <div>
       <Banner></Banner>

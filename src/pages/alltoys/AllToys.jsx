@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Card, Typography } from "@material-tailwind/react";
+import dtitle from "../../dtitle";
 
 const AllToys = () => {
+  dtitle("AlL TOYS");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name"); // Add state for sorting
   const toys = useLoaderData();

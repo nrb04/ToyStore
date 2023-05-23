@@ -6,8 +6,10 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import dtitle from "../dtitle";
 
 const Blogs = () => {
+  dtitle("Blogs");
   return (
     <div>
       <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 py-5">
